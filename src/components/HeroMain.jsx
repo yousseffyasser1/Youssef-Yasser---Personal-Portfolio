@@ -100,7 +100,8 @@ export default function HeroMain() {
           {/* Download CV button */}
           <motion.div {...fadeUp(0.48)}>
             <a
-              href="#"
+              href="/Youssef-Yasser-Mohamed-Gamal.pdf"
+              download="Youssef-Yasser-CV.pdf"
               className="inline-flex items-center gap-3 px-8 py-4 rounded-full border border-[#ff7a18] text-[#ff7a18] text-sm font-semibold tracking-widest uppercase hover:bg-[#ff7a18] hover:text-white transition-all duration-300 hover:-translate-y-0.5"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
