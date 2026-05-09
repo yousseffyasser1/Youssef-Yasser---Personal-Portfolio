@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const projects = [
   {
@@ -79,7 +80,9 @@ function ProjectCard({ project, index }) {
                  transition-all duration-300 cursor-pointer"
     >
       {/* Card image area */}
-      <div className={`relative h-44 bg-gradient-to-br ${project.gradient} overflow-hidden`}>
+      <div
+        className={`relative h-44 bg-gradient-to-br ${project.gradient} overflow-hidden`}
+      >
         {/* Grid texture */}
         <div
           className="absolute inset-0 opacity-10"
@@ -190,13 +193,15 @@ export default function Projects() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="flex justify-center mt-14"
         >
-          <a
-            href="#"
+          <Link
+            to="/projects"
             className="group flex items-center gap-2 text-sm text-gray-500 hover:text-accent transition-colors duration-200 font-[DM_Sans] border border-[#1f1f22] hover:border-accent rounded-2xl px-8 py-3"
           >
             View all projects
-            <span className="group-hover:translate-x-1 transition-transform duration-200">→</span>
-          </a>
+            <span className="group-hover:translate-x-1 transition-transform duration-200">
+              →
+            </span>
+          </Link>
         </motion.div>
       </div>
     </section>

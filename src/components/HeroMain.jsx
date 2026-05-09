@@ -27,9 +27,9 @@ export default function HeroMain() {
 
         {/* Photo */}
         <img
-          src="/src/assets/Gemini_Generated_Image_37dibt37dibt37di.png"
+          src="/src/assets/jo 3.png"
           alt="Yousef Yasser"
-          className="w-full h-full object-cover object-[65%_top] md:object-right-top lg:object-right"
+          className="w-full h-full object-cover object-[75%_top] md:object-right-top lg:object-right"
           style={{ filter: "grayscale(50%)" }}
         />
 
