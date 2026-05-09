@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import joImage3 from "/src/assets/jo 3.png";
+import joImage3 from "../assets/jo 3.png";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },

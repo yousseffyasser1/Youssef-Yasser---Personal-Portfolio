@@ -1,6 +1,10 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
+import RecommerceImage from "../assets/R e-shop 1.png";
+import SanadImage from "../assets/Sanda Project .jpeg";
+import MathTeac from "../assets/Math teacher.png";
+import NewsImage from "../assets/موقع اخباري .jpeg";
 
 const projects = [
   {
@@ -10,8 +14,9 @@ const projects = [
     description:
       "A real-time financial analytics platform with interactive charts, budget tracking, and predictive insights powered by AI.",
     stack: ["React", "TypeScript", "Recharts", "Supabase"],
-    gradient: "from-blue-900/40 to-indigo-900/20",
+    // gradient: "from-blue-900/40 to-indigo-900/20",
     icon: "📊",
+    image: RecommerceImage,
   },
   {
     id: 2,
@@ -22,6 +27,7 @@ const projects = [
     stack: ["Next.js", "Framer Motion", "Stripe", "Prisma"],
     gradient: "from-rose-900/40 to-pink-900/20",
     icon: "🛍️",
+    image: SanadImage,
   },
   {
     id: 3,
@@ -32,6 +38,7 @@ const projects = [
     stack: ["React", "Socket.io", "Node.js", "MongoDB"],
     gradient: "from-emerald-900/40 to-teal-900/20",
     icon: "✅",
+    image: MathTeac,
   },
   {
     id: 4,
@@ -42,6 +49,7 @@ const projects = [
     stack: ["Next.js", "GSAP", "Three.js", "Tailwind"],
     gradient: "from-amber-900/40 to-orange-900/20",
     icon: "🎨",
+    image: NewsImage,
   },
   {
     id: 5,
@@ -52,6 +60,7 @@ const projects = [
     stack: ["React Native", "Expo", "FastAPI", "PostgreSQL"],
     gradient: "from-purple-900/40 to-violet-900/20",
     icon: "💪",
+    image: RecommerceImage,
   },
   {
     id: 6,
@@ -62,6 +71,7 @@ const projects = [
     stack: ["Node.js", "Puppeteer", "TypeScript", "CLI"],
     gradient: "from-cyan-900/40 to-sky-900/20",
     icon: "⚡",
+    image: RecommerceImage,
   },
 ];
 
@@ -92,11 +102,11 @@ function ProjectCard({ project, index }) {
             backgroundSize: "24px 24px",
           }}
         />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-6xl group-hover:scale-110 transition-transform duration-500 select-none">
-            {project.icon}
-          </span>
-        </div>
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-[#111214] to-transparent" />
 
         {/* Category badge */}

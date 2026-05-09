@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import joLogo from "/src/assets/Futuristic YY logo design.png";
+import joLogo from "../assets/Futuristic YY logo design.png";
+
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 32 },

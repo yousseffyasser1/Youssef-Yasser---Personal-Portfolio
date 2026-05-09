@@ -13,6 +13,14 @@ const education = [
 
 const internships = [
   {
+    period: "Feb 2026 – Present",
+    title: "Digilians Digital Pioneers Initiative",
+    company: "Digilians",
+    description:
+      "Intensive MERN Stack training program focused on building scalable full-stack web applications using MongoDB, Express.js, React.js, and Node.js, alongside teamwork, freelancing, and real-world project development.",
+    icon: "🚀",
+  },
+  {
     period: "Apr 2024 – Oct 2024",
     title: "Digital Egypt Pioneers Scholarship",
     company: "MCIT",
@@ -24,21 +32,43 @@ const internships = [
     period: "Jul 2024",
     title: "Advanced Front-End Development (React.js)",
     company: "ITI — Ismailia Branch",
-    description: "Summer training focused on advanced React.js development patterns and best practices.",
+    description:
+      "Summer training focused on advanced React.js development patterns and best practices.",
     icon: "⚛️",
   },
-  {
-    period: "Aug 2023",
-    title: "Front-End Internship",
-    company: "ITI — Ismailia Branch",
-    description: "Summer training covering core front-end fundamentals including HTML, CSS, and JavaScript.",
-    icon: "💻",
-  },
+  // {
+  //   period: "Aug 2023",
+  //   title: "Front-End Internship",
+  //   company: "ITI — Ismailia Branch",
+  //   description: "Summer training covering core front-end fundamentals including HTML, CSS, and JavaScript.",
+  //   icon: "💻",
+  // },
 ];
 
 const skills = [
-  "HTML5", "CSS3", "JavaScript","TypeScript", "React","Redux", "Tailwind CSS",
-  "Bootstrap","Framer Motion", "SASS", "Responsive Design","Node.js","Express.js","REST APIs","Authentication & JWT","MVC Architecture","MongoDB","Mongoose","Git","GitHub","Postman","Vite","Figma"
+  "HTML5",
+  "CSS3",
+  "JavaScript",
+  "TypeScript",
+  "React",
+  "Redux",
+  "Tailwind CSS",
+  "Bootstrap",
+  "Framer Motion",
+  "SASS",
+  "Responsive Design",
+  "Node.js",
+  "Express.js",
+  "REST APIs",
+  "Authentication & JWT",
+  "MVC Architecture",
+  "MongoDB",
+  "Mongoose",
+  "Git",
+  "GitHub",
+  "Postman",
+  "Vite",
+  "Figma",
 ];
 
 function TimelineItem({ item, index, isLast }) {
@@ -50,7 +80,11 @@ function TimelineItem({ item, index, isLast }) {
       ref={ref}
       initial={{ opacity: 0, x: -24 }}
       animate={inView ? { opacity: 1, x: 0 } : {}}
-      transition={{ duration: 0.6, delay: index * 0.12, ease: [0.22, 1, 0.36, 1] }}
+      transition={{
+        duration: 0.6,
+        delay: index * 0.12,
+        ease: [0.22, 1, 0.36, 1],
+      }}
       className="relative flex gap-6"
     >
       {/* Timeline spine */}
@@ -74,10 +108,16 @@ function TimelineItem({ item, index, isLast }) {
               >
                 {item.title || item.degree}
               </h4>
-              <p className="text-[#ff7a18] text-xs font-medium" style={{ fontFamily: "'Inter', sans-serif" }}>
+              <p
+                className="text-[#ff7a18] text-xs font-medium"
+                style={{ fontFamily: "'Inter', sans-serif" }}
+              >
                 {item.company || item.institution}
                 {item.location && (
-                  <span className="text-gray-600 font-normal"> · {item.location}</span>
+                  <span className="text-gray-600 font-normal">
+                    {" "}
+                    · {item.location}
+                  </span>
                 )}
               </p>
             </div>

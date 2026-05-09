@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import joLogo from "/src/assets/Futuristic YY logo design.png";
+import joLogo from "../assets/Futuristic YY logo design.png";
 
 const links = ["Projects", "About", "Articles", "Contact"];
 
