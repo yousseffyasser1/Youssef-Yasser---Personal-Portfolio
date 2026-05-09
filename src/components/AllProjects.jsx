@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
+import joLogo from "/src/assets/Futuristic YY logo design.png";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 32 },
@@ -138,7 +139,7 @@ function Navbar() {
             <path d="M4 6 L16 26 L28 6" stroke="#ff7a18" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
             <path d="M10 6 L16 16" stroke="#ff7a18" strokeWidth="3.5" strokeLinecap="round" fill="none" />
           </svg> */}
-        <img src="/src/assets/Futuristic YY logo design.png" className="h-10 md:h-12 lg:h-16 w-auto object-contain" alt="Yousef" />
+        <img src={joLogo} className="h-10 md:h-12 lg:h-16 w-auto object-contain" alt="Yousef" />
         </Link>
 
         {/* Right — nav links */}

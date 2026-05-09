@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import joImage3 from "/src/assets/jo 3.png";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
@@ -27,7 +28,7 @@ export default function HeroMain() {
 
         {/* Photo */}
         <img
-          src="/src/assets/jo 3.png"
+          src={joImage3}
           alt="Yousef Yasser"
           className="w-full h-full object-cover object-[75%_top] md:object-right-top lg:object-right"
           style={{ filter: "grayscale(50%)" }}

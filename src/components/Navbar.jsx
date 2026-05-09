@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import joLogo from "/src/assets/Futuristic YY logo design.png";
 
 const links = ["Projects", "About", "Articles", "Contact"];
 
@@ -50,7 +51,7 @@ export default function Navbar() {
           >
             Yousef<span className="text-[#ff7a18]">.</span>
           </span> */}
-          <img src="/src/assets/Futuristic YY logo design.png" className="h-10 md:h-12 lg:h-16 w-auto object-contain" alt="Yousef" />
+          <img src={joLogo} className="h-10 md:h-12 lg:h-16 w-auto object-contain" alt="Yousef" />
         </a>
 
         {/* Desktop Links */}
