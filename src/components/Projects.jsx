@@ -1,66 +1,18 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
-import RecommerceImage from "../assets/R e-shop 1.png";
-import SanadImage from "../assets/Sanda Project .jpeg";
-import MathTeac from "../assets/Math teacher.png";
+import { featuredProjects } from "../data/projects";
 
-const projects = [
-  {
-    id: 1,
-    category: "Full Stack / Capstone Project",
-    title: "Sanda - Smart Workforce Marketplace",
-    description:
-      "A full-stack workforce marketplace connecting employers with verified workers for short-term jobs through job posting, applications, assignments, QR attendance, payments, chat, notifications, and admin workflows.",
-    stack: [
-      "React",
-      "TypeScript",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "Tailwind CSS",
-      "React Query",
-    ],
-    highlights:
-      "Job lifecycle, applications, role-based access, wallet UI states, payment feedback, QR attendance, chat, notifications, admin workflows.",
-    gradient: "from-orange-900/40 to-amber-900/20",
-    image: SanadImage,
-  },
-  {
-    id: 2,
-    category: "Full Stack / E-Commerce",
-    title: "House Of Dessert - Full-Stack E-Commerce Application",
-    description:
-      "A responsive Arabic RTL e-commerce application for a premium dessert brand with product catalog, category filtering, product details, cart, checkout flow, order management, authentication, payment workflow, and admin dashboard.",
-    stack: [
-      "React",
-      "JavaScript",
-      "Vite",
-      "Tailwind CSS",
-      "React Router",
-      "Zustand",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-    ],
-    gradient: "from-rose-900/40 to-pink-900/20",
-    image: RecommerceImage,
-  },
-  {
-    id: 3,
-    category: "Frontend / Team Project",
-    title: "Chatify - AI Chat Application",
-    description:
-      "A modern AI-powered chat application supporting instant messaging, group chats, voice/video calls, media sharing, AI chatbot, voice-to-text, and multilingual translation.",
-    stack: ["React.js", "Real-time Chat", "AI Chatbot", "Voice-to-Text", "GitHub"],
-    gradient: "from-indigo-900/40 to-sky-900/20",
-    image: MathTeac,
-  },
+const gradients = [
+  "from-orange-900/40 to-amber-900/20",
+  "from-rose-900/40 to-pink-900/20",
+  "from-indigo-900/40 to-sky-900/20",
 ];
 
 function ProjectCard({ project, index }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const hasExternalLinks = project.liveUrl || project.githubUrl;
 
   return (
     <motion.div
@@ -70,11 +22,13 @@ function ProjectCard({ project, index }) {
       transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
       className="group relative bg-[#111214] border border-[#1f1f22] rounded-2xl overflow-hidden
                  hover:border-accent hover:-translate-y-2 hover:scale-[1.01] hover:shadow-glow
-                 transition-all duration-300 cursor-pointer"
+                 transition-all duration-300"
     >
       {/* Card image area */}
       <div
-        className={`relative h-44 bg-gradient-to-br ${project.gradient} overflow-hidden`}
+        className={`relative h-44 bg-gradient-to-br ${
+          gradients[index % gradients.length]
+        } overflow-hidden`}
       >
         {/* Grid texture */}
         <div
@@ -85,17 +39,25 @@ function ProjectCard({ project, index }) {
             backgroundSize: "24px 24px",
           }}
         />
-        <img
-          src={project.image}
-          alt={project.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-        />
+        {project.image ? (
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+        ) : (
+          <div className="relative z-10 flex h-full items-center justify-center px-6 text-center">
+            <span className="font-[Syne] text-xl font-700 text-white/80">
+              {project.title}
+            </span>
+          </div>
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-[#111214] to-transparent" />
 
         {/* Category badge */}
         <div className="absolute top-4 left-4">
           <span className="text-xs px-3 py-1 rounded-full bg-[#0b0b0c]/70 border border-[#1f1f22] text-gray-400 font-[DM_Sans]">
-            {project.category}
+            {project.type}
           </span>
         </div>
 
@@ -111,18 +73,12 @@ function ProjectCard({ project, index }) {
           {project.title}
         </h3>
         <p className="text-gray-500 text-sm font-[DM_Sans] leading-relaxed mb-5">
-          {project.description}
+          {project.shortDescription}
         </p>
-        {project.highlights && (
-          <p className="text-gray-600 text-xs font-[DM_Sans] leading-relaxed mb-5">
-            <span className="text-accent">Highlights:</span>{" "}
-            {project.highlights}
-          </p>
-        )}
 
         {/* Tech stack */}
-        <div className="flex flex-wrap gap-2">
-          {project.stack.map((tech) => (
+        <div className="flex flex-wrap gap-2 mb-6">
+          {project.stack.slice(0, 5).map((tech) => (
             <span
               key={tech}
               className="text-xs px-2.5 py-1 rounded-lg bg-[#0b0b0c] border border-[#1f1f22] text-gray-500 font-[DM_Sans]
@@ -131,6 +87,42 @@ function ProjectCard({ project, index }) {
               {tech}
             </span>
           ))}
+        </div>
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-3">
+          <Link
+            to={`/projects/${project.slug}`}
+            className="group/link inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-gray-400 hover:text-accent transition-colors duration-200 border-b border-[#1f1f22] hover:border-accent pb-1"
+          >
+            View Case Study
+            <span className="group-hover/link:translate-x-1 transition-transform duration-200">
+              -&gt;
+            </span>
+          </Link>
+
+          {hasExternalLinks && (
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+              {project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-xs font-semibold tracking-widest uppercase text-gray-500 transition-colors duration-200 hover:text-accent"
+                >
+                  Live Demo ↗
+                </a>
+              )}
+              {project.githubUrl && (
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-xs font-semibold tracking-widest uppercase text-gray-500 transition-colors duration-200 hover:text-accent"
+                >
+                  GitHub ↗
+                </a>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </motion.div>
@@ -181,8 +173,8 @@ export default function Projects() {
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {projects.map((project, i) => (
-            <ProjectCard key={project.id} project={project} index={i} />
+          {featuredProjects.map((project, i) => (
+            <ProjectCard key={project.slug} project={project} index={i} />
           ))}
         </div>
 

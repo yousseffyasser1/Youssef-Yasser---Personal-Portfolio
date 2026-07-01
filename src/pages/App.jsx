@@ -7,6 +7,7 @@ import Projects from "../components/Projects";
 // import Articles from "../components/Articles";
 import Contact from "../components/Contact";
 import AllProjects from "../components/AllProjects";
+import ProjectDetails from "../components/ProjectDetails";
 
 // ── Home page (all your existing sections) ──
 function Home() {
@@ -34,6 +35,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<AllProjects />} />
+          <Route path="/projects/:slug" element={<ProjectDetails />} />
         </Routes>
       </BrowserRouter>
     </div>
