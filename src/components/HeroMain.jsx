@@ -29,7 +29,7 @@ export default function HeroMain() {
         {/* Photo */}
         <img
           src={joImage3}
-          alt="Yousef Yasser"
+          alt="Youssef Yasser"
           className="w-full h-full object-cover object-[75%_top] md:object-right-top lg:object-right"
           style={{ filter: "grayscale(50%)" }}
         />
@@ -60,7 +60,7 @@ export default function HeroMain() {
             {...fadeUp(0.1)}
             className="text-[#ff7a18] text-xs font-semibold tracking-[0.22em] uppercase mb-8"
           >
-            Full-Stack Developer
+            MERN STACK DEVELOPER
           </motion.p>
 
           {/* Giant name */}
@@ -73,7 +73,7 @@ export default function HeroMain() {
               className="block text-white"
               style={{ fontSize: "clamp(72px, 10vw, 140px)", fontWeight: 800 }}
             >
-              YOUSEF
+              YOUSSEF
             </span>
             <span
               className="block text-white/90"
@@ -94,14 +94,17 @@ export default function HeroMain() {
             className="text-gray-400 text-base leading-relaxed max-w-sm mb-12"
             style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}
           >
-            Full-stack engineer turning complex problems into clean, scalable
-            products. I care deeply about performance, clarity, and great UX.
+            Full Stack MERN Developer & React.js Specialist. I build responsive
+            full-stack web applications using React, Node.js, Express.js, and
+            MongoDB, with a focus on clean UI, scalable architecture,
+            authentication flows, REST API integration, and real user
+            experience.
           </motion.p>
 
           {/* Download CV button */}
           <motion.div {...fadeUp(0.48)}>
             <a
-              href="/Youssef-Yasser-Mohamed-Gamal.pdf"
+              href="/public/Youssef Yasser Gamal.pdf"
               download="Youssef-Yasser-CV.pdf"
               className="inline-flex items-center gap-3 px-8 py-4 rounded-full border border-[#ff7a18] text-[#ff7a18] text-sm font-semibold tracking-widest uppercase hover:bg-[#ff7a18] hover:text-white transition-all duration-300 hover:-translate-y-0.5"
               style={{ fontFamily: "'Inter', sans-serif" }}

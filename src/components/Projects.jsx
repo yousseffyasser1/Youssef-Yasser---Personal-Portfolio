@@ -4,74 +4,57 @@ import { Link } from "react-router-dom";
 import RecommerceImage from "../assets/R e-shop 1.png";
 import SanadImage from "../assets/Sanda Project .jpeg";
 import MathTeac from "../assets/Math teacher.png";
-import NewsImage from "../assets/موقع اخباري .jpeg";
 
 const projects = [
   {
     id: 1,
-    category: "Web App",
-    title: "FinTrack Dashboard",
+    category: "Full Stack / Capstone Project",
+    title: "Sanda - Smart Workforce Marketplace",
     description:
-      "A real-time financial analytics platform with interactive charts, budget tracking, and predictive insights powered by AI.",
-    stack: ["React", "TypeScript", "Recharts", "Supabase"],
-    // gradient: "from-blue-900/40 to-indigo-900/20",
-    icon: "📊",
-    image: RecommerceImage,
-  },
-  {
-    id: 2,
-    category: "E-Commerce",
-    title: "Luxe Store",
-    description:
-      "Premium e-commerce experience with 3D product previews, fluid animations, and a seamless checkout flow.",
-    stack: ["Next.js", "Framer Motion", "Stripe", "Prisma"],
-    gradient: "from-rose-900/40 to-pink-900/20",
-    icon: "🛍️",
+      "A full-stack workforce marketplace connecting employers with verified workers for short-term jobs through job posting, applications, assignments, QR attendance, payments, chat, notifications, and admin workflows.",
+    stack: [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Tailwind CSS",
+      "React Query",
+    ],
+    highlights:
+      "Job lifecycle, applications, role-based access, wallet UI states, payment feedback, QR attendance, chat, notifications, admin workflows.",
+    gradient: "from-orange-900/40 to-amber-900/20",
     image: SanadImage,
   },
   {
+    id: 2,
+    category: "Full Stack / E-Commerce",
+    title: "House Of Dessert - Full-Stack E-Commerce Application",
+    description:
+      "A responsive Arabic RTL e-commerce application for a premium dessert brand with product catalog, category filtering, product details, cart, checkout flow, order management, authentication, payment workflow, and admin dashboard.",
+    stack: [
+      "React",
+      "JavaScript",
+      "Vite",
+      "Tailwind CSS",
+      "React Router",
+      "Zustand",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+    ],
+    gradient: "from-rose-900/40 to-pink-900/20",
+    image: RecommerceImage,
+  },
+  {
     id: 3,
-    category: "SaaS",
-    title: "TaskFlow Pro",
+    category: "Frontend / Team Project",
+    title: "Chatify - AI Chat Application",
     description:
-      "Collaborative project management tool with drag-and-drop boards, real-time sync, and smart sprint planning.",
-    stack: ["React", "Socket.io", "Node.js", "MongoDB"],
-    gradient: "from-emerald-900/40 to-teal-900/20",
-    icon: "✅",
+      "A modern AI-powered chat application supporting instant messaging, group chats, voice/video calls, media sharing, AI chatbot, voice-to-text, and multilingual translation.",
+    stack: ["React.js", "Real-time Chat", "AI Chatbot", "Voice-to-Text", "GitHub"],
+    gradient: "from-indigo-900/40 to-sky-900/20",
     image: MathTeac,
-  },
-  {
-    id: 4,
-    category: "Portfolio",
-    title: "Artisan Agency",
-    description:
-      "Award-winning creative agency website with immersive scroll-triggered animations and WebGL backgrounds.",
-    stack: ["Next.js", "GSAP", "Three.js", "Tailwind"],
-    gradient: "from-amber-900/40 to-orange-900/20",
-    icon: "🎨",
-    image: NewsImage,
-  },
-  {
-    id: 5,
-    category: "Mobile App",
-    title: "PulseHealth",
-    description:
-      "Health & fitness tracker with AI-powered workout recommendations, nutrition logging, and progress analytics.",
-    stack: ["React Native", "Expo", "FastAPI", "PostgreSQL"],
-    gradient: "from-purple-900/40 to-violet-900/20",
-    icon: "💪",
-    image: RecommerceImage,
-  },
-  {
-    id: 6,
-    category: "Tool",
-    title: "CodeSnap CLI",
-    description:
-      "Developer tool that generates beautiful code screenshots with syntax highlighting and custom themes.",
-    stack: ["Node.js", "Puppeteer", "TypeScript", "CLI"],
-    gradient: "from-cyan-900/40 to-sky-900/20",
-    icon: "⚡",
-    image: RecommerceImage,
   },
 ];
 
@@ -118,7 +101,7 @@ function ProjectCard({ project, index }) {
 
         {/* Arrow on hover */}
         <div className="absolute top-4 right-4 w-7 h-7 rounded-full border border-[#1f1f22] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-accent">
-          <span className="text-xs text-white">→</span>
+          <span className="text-xs text-white">-&gt;</span>
         </div>
       </div>
 
@@ -130,6 +113,12 @@ function ProjectCard({ project, index }) {
         <p className="text-gray-500 text-sm font-[DM_Sans] leading-relaxed mb-5">
           {project.description}
         </p>
+        {project.highlights && (
+          <p className="text-gray-600 text-xs font-[DM_Sans] leading-relaxed mb-5">
+            <span className="text-accent">Highlights:</span>{" "}
+            {project.highlights}
+          </p>
+        )}
 
         {/* Tech stack */}
         <div className="flex flex-wrap gap-2">
@@ -184,8 +173,9 @@ export default function Projects() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-gray-500 font-[DM_Sans] mt-4 max-w-md text-sm leading-relaxed"
           >
-            A curated collection of projects showcasing my craft in building
-            modern, performant web applications.
+            Real full-stack and React-focused projects built around clean UI,
+            practical workflows, APIs, authentication, and responsive user
+            experience.
           </motion.p>
         </div>
 
@@ -209,7 +199,7 @@ export default function Projects() {
           >
             View all projects
             <span className="group-hover:translate-x-1 transition-transform duration-200">
-              →
+              -&gt;
             </span>
           </Link>
         </motion.div>

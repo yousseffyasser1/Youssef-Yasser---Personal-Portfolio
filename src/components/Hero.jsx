@@ -6,7 +6,7 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.7, delay, ease: "easeOut" },
 });
 
-const skills = ["React", "TypeScript", "Next.js", "Tailwind CSS", "Node.js", "Figma"];
+const skills = ["React.js", "TypeScript", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"];
 
 export default function Hero() {
   return (
@@ -53,7 +53,7 @@ export default function Hero() {
           >
             <div className="h-px w-8 bg-accent" />
             <span className="text-gray-400 font-[DM_Sans] text-lg font-300 italic">
-              Frontend Developer
+              MERN Stack Developer | React.js Specialist
             </span>
           </motion.div>
 
@@ -61,9 +61,10 @@ export default function Hero() {
             {...fadeUp(0.4)}
             className="text-gray-400 font-[DM_Sans] text-base leading-relaxed max-w-md mb-10"
           >
-            I craft high-performance web experiences that live at the
-            intersection of clean code and thoughtful design. Turning ideas into
-            fast, accessible, pixel-perfect products.
+            I build responsive full-stack web applications using React, Node.js,
+            Express.js, and MongoDB, with a focus on clean UI, scalable
+            architecture, authentication flows, REST API integration, and real
+            user experience.
           </motion.p>
 
           <motion.div {...fadeUp(0.5)} className="flex flex-wrap gap-4 mb-12">
@@ -114,7 +115,7 @@ export default function Hero() {
                 <div className="w-24 h-24 rounded-full bg-gradient-to-br from-accent to-orange-700 mx-auto mb-3 flex items-center justify-center">
                   <span className="text-4xl font-[Syne] font-800 text-white">YY</span>
                 </div>
-                <span className="text-xs text-gray-500 font-[DM_Sans]">Frontend Dev</span>
+                <span className="text-xs text-gray-500 font-[DM_Sans]">MERN Developer</span>
               </div>
             </div>
 

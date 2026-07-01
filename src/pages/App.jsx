@@ -4,7 +4,7 @@ import HeroMain from "../components/HeroMain";
 // import Hero from "../components/Hero";
 import Experience from "../components/Experience";
 import Projects from "../components/Projects";
-import Articles from "../components/Articles";
+// import Articles from "../components/Articles";
 import Contact from "../components/Contact";
 import AllProjects from "../components/AllProjects";
 
@@ -18,7 +18,8 @@ function Home() {
         {/* <Hero /> */}
         <Experience />
         <Projects />
-        <Articles />
+        {/* Articles are hidden until real writing replaces placeholder content. */}
+        {/* <Articles /> */}
         <Contact />
       </main>
     </>

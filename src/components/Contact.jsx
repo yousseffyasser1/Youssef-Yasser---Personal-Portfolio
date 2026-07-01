@@ -54,7 +54,11 @@ const socials = [
   },
 ];
 
-const sitemap = ["Home", "Projects", "Blogs", "Contact"];
+const sitemap = [
+  { label: "Home", href: "#" },
+  { label: "Projects", href: "#projects" },
+  { label: "Contact", href: "#contact" },
+];
 
 export default function Contact() {
   const ref = useRef(null);
@@ -76,8 +80,8 @@ export default function Contact() {
               className="text-white text-2xl md:text-3xl font-semibold leading-tight mb-6"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
-              Available for select freelance
-              <br />opportunities.
+              Available for freelance projects,
+              <br />internships, and junior full-stack opportunities.
             </motion.p>
 
             <motion.p
@@ -87,8 +91,8 @@ export default function Contact() {
               className="text-gray-500 text-sm leading-relaxed mb-8 max-w-sm"
               style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}
             >
-              Have a project in mind that requires technical excellence and
-              editorial precision? Let's build something iconic.
+              Have a project, role, or collaboration in mind? Let's build
+              something clean, scalable, and useful.
             </motion.p>
 
             <motion.a
@@ -148,13 +152,13 @@ export default function Contact() {
               </p>
               <ul className="flex flex-col gap-3">
                 {sitemap.map((item) => (
-                  <li key={item}>
+                  <li key={item.label}>
                     <a
-                      href={`#${item.toLowerCase()}`}
+                      href={item.href}
                       className="text-gray-300 hover:text-[#ff7a18] transition-colors duration-200 text-sm"
                       style={{ fontFamily: "'Inter', sans-serif" }}
                     >
-                      {item}
+                      {item.label}
                     </a>
                   </li>
                 ))}

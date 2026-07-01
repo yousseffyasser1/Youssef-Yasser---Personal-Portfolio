@@ -3,7 +3,7 @@ import { motion, useInView } from "framer-motion";
 
 const education = [
   {
-    period: "2025 / 07",
+    period: "2025",
     degree: "Computer Science — Information Systems",
     institution: "Suez Canal University",
     location: "Ismailia, Egypt",
@@ -45,30 +45,44 @@ const internships = [
   // },
 ];
 
-const skills = [
-  "HTML5",
-  "CSS3",
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Redux",
-  "Tailwind CSS",
-  "Bootstrap",
-  "Framer Motion",
-  "SASS",
-  "Responsive Design",
-  "Node.js",
-  "Express.js",
-  "REST APIs",
-  "Authentication & JWT",
-  "MVC Architecture",
-  "MongoDB",
-  "Mongoose",
-  "Git",
-  "GitHub",
-  "Postman",
-  "Vite",
-  "Figma",
+const skillGroups = [
+  {
+    label: "Frontend",
+    items: [
+      "React.js",
+      "JavaScript",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "React Query",
+      "React Hook Form",
+      "Zod",
+    ],
+  },
+  {
+    label: "Backend",
+    items: ["Node.js", "Express.js", "REST APIs", "JWT Authentication", "bcrypt"],
+  },
+  {
+    label: "Database",
+    items: ["MongoDB", "Mongoose"],
+  },
+  {
+    label: "Tools",
+    items: ["Git", "GitHub", "Postman", "VS Code", "Vercel", "Vitest"],
+  },
+  {
+    label: "Concepts",
+    items: [
+      "Role-Based Access Control",
+      "API Integration",
+      "Form Validation",
+      "Error Handling",
+      "Responsive Design",
+      "UI/UX Fundamentals",
+    ],
+  },
 ];
 
 function TimelineItem({ item, index, isLast }) {
@@ -197,7 +211,7 @@ export default function Experience() {
             style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}
           >
             My academic journey and hands-on training that shaped my skills as a
-            front-end developer.
+            Full Stack MERN Developer focused on React.js.
           </motion.p>
         </div>
 
@@ -242,15 +256,27 @@ export default function Experience() {
                   Skills
                 </h3>
               </div>
-              <div className="flex flex-wrap gap-2">
-                {skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="text-xs px-3 py-1.5 rounded-lg bg-[#111214] border border-[#1f1f22] text-gray-400 hover:border-[#ff7a18] hover:text-[#ff7a18] transition-all duration-200 cursor-default"
-                    style={{ fontFamily: "'Inter', sans-serif" }}
-                  >
-                    {skill}
-                  </span>
+              <div className="space-y-4">
+                {skillGroups.map((group) => (
+                  <div key={group.label}>
+                    <p
+                      className="text-[#ff7a18] text-[10px] tracking-widest uppercase mb-2"
+                      style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600 }}
+                    >
+                      {group.label}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {group.items.map((skill) => (
+                        <span
+                          key={skill}
+                          className="text-xs px-3 py-1.5 rounded-lg bg-[#111214] border border-[#1f1f22] text-gray-400 hover:border-[#ff7a18] hover:text-[#ff7a18] transition-all duration-200 cursor-default"
+                          style={{ fontFamily: "'Inter', sans-serif" }}
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 ))}
               </div>
             </motion.div>
